@@ -24,7 +24,7 @@ O intuito do projeto é uma aplicação IoT de alimentador automático desenvolv
 **Dispositivos IoT utilizados:**
 
 - Arduino Uno
-- 2 sensores ultrassônico hc-sr04
+- 2 sensores ultrassônico HC-SR04
 - 2 fontes de voltagem 5v
 - 2 servos
 
@@ -70,25 +70,61 @@ http://localhost:1880
 
 Clique no canto superior direito, depois em “Manage palette”
 
-![Configurations/cofigurations-node-red.jpg ](Configurations/cofigurations-node-red.jpg )
+<img src="AlimentadorAutomaticoPet/Imagens/cofigurations-node-red.jpg">
 
 **Faça a instalação desses nós:**
 
+<img src="AlimentadorAutomaticoPet/Imagens/nodes-node-red.jpg">
+
 ## Arquitetura do projeto
+
+<img src="AlimentadorAutomaticoPet/Imagens/Arquitetura-alimentadorAI.jpeg">
 
 ### Conexões do arduino e componentes:
 
-- **Porta 0:**
+<h4>Parte do alimento</h4>
+<ul>
+	<li><b>Porta 0 e 1: </b></li>
+	<ul>
+		<li><b>Sensor HC-SR04</b>(encontrado na área Micro -> Sensors): sensor ultrassôncio que mede a proximidade.</li>
+        	<li>Fonte de voltagem de 5V</li>
+      	</ul>
+  	<li><b>Porta 10: </b></li>
+	<ul>
+		<li><b>Servo</b>(encontrado na área Output: atuador que abre e fecha despejando a comida.</li>
+      		<ul>
+        		<li><b>+V: </b> Rail de 5V</li>
+        		<li><b>Gnb: </b> Terra</li>
+      		</ul>
+	</ul>
+ </ul>
+      
+<h4>Parte da água</h4>
+<ul>
+	<li><b>Porta 3 e 4: </b></li>
+	<ul>
+		<li><b>Sensor HC-SR04</b>(encontrado na área Micro -> Sensors): sensor ultrassôncio que mede a proximidade.</li>
+        	<li>Fonte de voltagem de 5V</li>
+      	</ul>
+  	<li><b>Porta 11: </b></li>
+	<ul>
+		<li><b>Servo</b>(encontrado na área Output: atuador que abre e fecha despejando a água.</li>
+      		<ul>
+        		<li><b>+V: </b> Rail de 5V</li>
+        		<li><b>Gnb: </b> Terra</li>
+      		</ul>
+	</ul>
+ </ul>
 
 ### Nós:
 
 - **Serial In:** A COM4 está recebendo a conexão serial da COM3 que foi aberta no serial do Arudino dentro do SimulIde;
 - **Delay:** Faz um delay de 5 segundos;
 - **JSON:** O nó JSON está recebendo uma String JSON gerada pelo código do Arduino e converte em um Objeto JavaScript;
-- **Change:** Filtra as informações do Objeto JavaScript (Luminosidade, Temperatura, Velocidade do vento);
+- **Change:** Filtra as informações do Objeto JavaScript (Distância água e alimento);
 - **Mqtt Out:** Recebe a mensagem filtrada e publica as mensagens com o contéudo em um MQTT Broker;
 - **Mqtt In:** Conecta com o Mqtt Broker e subscreve para mensagens de um tópico específico;
-- **Gauge:** Adiciona uma interface Gauge para exibir as informações(Luminosidade, Temperatura, Velocidade do vento) em um dashboard.
+- **Gauge:** Adiciona uma interface Gauge para exibir as informações(Distância água e alimento) em um dashboard.
 
 ### Dados exibidos no **Gauge**:
 
