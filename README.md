@@ -76,9 +76,47 @@ Clique no canto superior direito, depois em “Manage palette”
 
 ## Arquitetura do projeto
 
+<img src="AlimentadorAutomaticoPet/Imagens/Arquitetura-alimentadorAI.jpeg">
+
 ### Conexões do arduino e componentes:
 
-- **Porta 0:**
+<h4>Parte do alimento</h4>
+<ul>
+	<li><b>Porta 0 e 1: </b></li>
+		<ul>
+			<li><b>Sensor HC-SR04</b>(encontrado na área Micro -> Sensors): sensor ultrassôncio que mede a proximidade.</li>
+      <ul>
+        <li>Fonte de voltagem de 5V</li>
+      </ul>
+		</ul>
+  <li><b>Porta 10: </b></li>
+		<ul>
+			<li><b>Servo</b>(encontrado na área Output: atuador que abre e fecha despejando a comida.</li>
+      <ul>
+        <li><b>+V: </b> Rail de 5V</li>
+        <li><b>Gnb: </b> Terra</li>
+      <ul>
+		</ul>
+ </ul>
+      
+<h4>Parte da água</h4>
+<ul>
+	<li><b>Porta 3 e 4: </b></li>
+		<ul>
+			<li><b>Sensor HC-SR04</b>(encontrado na área Micro -> Sensors): sensor ultrassôncio que mede a proximidade.</li>
+      <ul>
+        <li>Fonte de voltagem de 5V</li>
+      </ul>
+		</ul>
+  <li><b>Porta 11: </b></li>
+		<ul>
+			<li><b>Servo</b>(encontrado na área Output: atuador que abre e fecha despejando a água.</li>
+      <ul>
+        <li><b>+V: </b> Rail de 5V</li>
+        <li><b>Gnb: </b> Terra</li>
+      <ul>
+		</ul>
+ </ul>
 
 ### Nós:
 
