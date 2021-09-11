@@ -70,7 +70,7 @@ http://localhost:1880
 
 Clique no canto superior direito, depois em “Manage palette”
 
-![Configurations/cofigurations-node-red.jpg ](Configurations/cofigurations-node-red.jpg )
+<img src="AlimentadorAutomaticoPet/Imagens/cofigurations-node-red.jpg">
 
 **Faça a instalação desses nós:**
 
