@@ -78,7 +78,7 @@ Clique no canto superior direito, depois em “Manage palette”
 
 ## Arquitetura do projeto
 
-<img src="AlimentadorAutomaticoPet/Imagens/Arquitetura-alimentadorAI.jpeg">
+<img src="AlimentadorAutomaticoPet/Imagens/Arquitetura-SmartFeed.jpeg">
 
 ### Conexões do arduino e componentes:
 
