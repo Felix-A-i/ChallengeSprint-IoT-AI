@@ -161,8 +161,8 @@ ls -l
 
 Use o comando “ls -l” para listar os arquivos e cheque se fez o clone do projeto.
 
-## Link de vídeo demonstração
-- [link-video-demonstracao](https://www.loom.com/share/b8ff4dfd1ea24c499fcbc4116b373ce3)
+## Link de vídeo
+- [link-video](https://www.youtube.com/watch?v=TZMbxGHbd2s)
 ### Referências
 
 - [Node-red](https://nodered.org/docs/getting-started/local)
